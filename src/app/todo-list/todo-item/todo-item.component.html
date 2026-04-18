@@ -1,0 +1,17 @@
+<li class="todo-item">
+  <label>
+    <input type="checkbox" [checked]="task.done" (change)="onDoneChange($event)" />
+    <div class="task-content">
+      <span [class.done]="task.done">{{ task.title }}</span>
+      <p>{{ task.description }}</p>
+    </div>
+  </label>
+  <button type="button" class="delete-btn" (click)="onDelete()" aria-label="Delete task">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path
+        d="M9 3h6l1 2h4v2H4V5h4l1-2zm1 6h2v8h-2V9zm4 0h2v8h-2V9zM7 9h2v8H7V9zm-1 12h12l1-14H5l1 14z"
+      />
+    </svg>
+  </button>
+  <small>Created {{ task.date | date: 'mediumDate' }}</small>
+</li>

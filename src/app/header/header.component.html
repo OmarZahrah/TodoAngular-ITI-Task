@@ -1,0 +1,47 @@
+<header class="mb-5 border-b border-slate-700 pb-3.5">
+  <div class="mb-3 flex items-center justify-between gap-3">
+    <h1 class="m-0 text-2xl font-bold tracking-tight text-slate-100">To Do List</h1>
+    @if (isLoggedIn$ | async) {
+      <button
+        type="button"
+        class="rounded-md bg-rose-700 px-3 py-1.5 text-sm font-semibold text-white hover:bg-rose-600"
+        (click)="logoutDemoUser()"
+      >
+        Logout Demo
+      </button>
+    } @else {
+      <button
+        type="button"
+        class="rounded-md bg-emerald-700 px-3 py-1.5 text-sm font-semibold text-white hover:bg-emerald-600"
+        (click)="loginDemoUser()"
+      >
+        Login
+      </button>
+    }
+  </div>
+
+  <nav class="flex flex-wrap items-center gap-2">
+    <a
+      routerLink="/"
+      routerLinkActive="bg-slate-600 text-white"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="rounded-md bg-slate-800 px-3 py-1.5 text-sm text-slate-200"
+    >
+      Todos
+    </a>
+    <a
+      routerLink="/demo-public"
+      routerLinkActive="bg-slate-600 text-white"
+      class="rounded-md bg-slate-800 px-3 py-1.5 text-sm text-slate-200"
+    >
+      Public Page
+    </a>
+    <a
+      routerLink="/demo-protected"
+      routerLinkActive="bg-slate-600 text-white"
+      class="rounded-md bg-slate-800 px-3 py-1.5 text-sm text-slate-200"
+    >
+      Protected Page
+    </a>
+  </nav>
+</header>
